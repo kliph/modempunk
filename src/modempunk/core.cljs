@@ -15,7 +15,7 @@
   (svg/group
    {:width "100%"
     :height "100%"
-    :fill "fff"}
+    :class "blackout-fill"}
    (svg/rect [0 0] "100%" "100%")))
 
 (defn ship [{:keys [position heading] :as ship-state}]
@@ -26,10 +26,10 @@
     (svg/group
      {:stroke-width 0.5
       :fill "none"
-      :stroke "hotpink"}
+      :class "pank-stroke"}
      (svg/circle position ship-radius)
      (svg/group
-      {:stroke "yellow"}
+      {:class "yello-stroke"}
       (svg/line position heading-pos)))))
 
 (defn app-container []
@@ -38,7 +38,7 @@
      {:width 600
       :height 600}
      (svg/group
-      {:transform (g/scale M32 1)}
+      {}
       (background)
       (ship ship-state)))))
 
