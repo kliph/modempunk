@@ -1,10 +1,10 @@
-.lite-blue-fill { fill: #b6f5ef }
-.yello-fill { fill: #ffeda2 }
-.pank-fill { fill: #fdaabe }
-.teal-fill { fill: #4ec5c0 }
-.grn-fill { fill: #8cdaa4 }
-.dark-blue-fill { fill: #3365ba }
-.blackout-fill { fill: #fff }
+.lite-blue { color: #b6f5ef }
+.yello { color: #ffeda2 }
+.pank { color: #fdaabe }
+.teal { color: #4ec5c0 }
+.grn { color: #8cdaa4 }
+.dark-blue { color: #3365ba }
+.blackout { color: #ffffff }
 
 .lite-blue-stroke { stroke: #b6f5ef }
 .yello-stroke { stroke: #ffeda2 }

@@ -18,6 +18,12 @@
     :class "blackout-fill"}
    (svg/rect [0 0] "100%" "100%")))
 
+(defn svg-rotation
+  "Returns a string like rotate(45, 100, 100) to rotate 45 degrees
+  around the point 100, 100"
+  [{:keys [position heading] :as ship-state}]
+  (str "rotate(" heading ", " (first position) ", " (second position) ")"))
+
 (defn ship [{:keys [position heading] :as ship-state}]
   (let [ship-radius 10
         heading-pos [(first position)
@@ -26,7 +32,8 @@
     (svg/group
      {:stroke-width 0.5
       :fill "none"
-      :class "pank-stroke"}
+      :class "pank-stroke"
+      :transform (svg-rotation ship-state)}
      (svg/circle position ship-radius)
      (svg/group
       {:class "yello-stroke"}
