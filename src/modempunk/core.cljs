@@ -10,7 +10,9 @@
 (def by-id goog.dom.getElement)
 
 (def state (r/atom {:ship {:position [100 100]
-                           :heading 0}}))
+                           :previous-heading 0
+                           :heading 0}
+                    :target {:position [100 50]}}))
 
 (defn mouse-event->position [e]
   (let [raw-x (.-clientX e)
@@ -65,7 +67,15 @@
      {:stroke-width 0.5
       :fill "none"
       :class "pank-stroke"
-      :transform (svg-rotation ship-state)}
+      ;; :transform (svg-rotation ship-state)
+      }
+     [:animateTransform {:attributeName "transform"
+                         :attributeType "XML"
+                         :type "rotate"
+                         :from "0 100 100"
+                         :to "260 100 100"
+                         :dur "0.5s"
+                         :fill "freeze"}]
      (svg/circle position ship-radius)
      (svg/group
       {:class "yello-stroke"}
